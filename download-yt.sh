@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "yt-dlp termux script"
 
-cd ~/storage/music/
+cd ~/storage/shared/Music
 
 archives_dir="/data/data/com.termux/files/home/archives"
 mkdir -p $archives_dir
@@ -45,3 +45,5 @@ python ~/yt-dlp -x \
   -o "%(playlist_title)s/%(playlist_index)03d - %(title)s.%(ext)s" \
   $url
 
+# Trigger a media scan of the music directory to allow apps to see the newly added files
+am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///storage/emulated/0/Music/
