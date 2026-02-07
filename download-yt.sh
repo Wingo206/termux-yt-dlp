@@ -76,6 +76,8 @@ echo "Downloading playlist with URL: $url"
 python ~/yt-dlp -x \
   --audio-format mp3 \
   --embed-thumbnail \
+  --convert-thumbnails png \
+  --ppa "EmbedThumbnail+ffmpeg_o:-c:v png -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" \
   --yes-playlist \
   --embed-metadata \
   --download-archive "$archive_path" \
