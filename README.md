@@ -25,3 +25,6 @@ Script and setup to run yt-dlp for music playlists on Termux
 - Input the YouTube playlist URL into the dialog
 - Toggle clear archive if you want to redownload the entire playlist. Otherwise, it will only download videos that weren't downloaded yet.
 - Downloads go into Music/
+
+# Updating yt-dlp
+- rerun the curl step in home directory
